@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  width: 500px;
+  border: 1px solid pink;
+  padding: 5px;
+}
+
+main {
+  margin-bottom: 50px;
+}
+
+.container {
+  width: 900px;
+  border: 1px solid red;
+}
+
+p a {
+  display: inline;
+  background-color: mistyrose;
+  font-weight: bold;
+}
+
+.hero img {
+  width: 100%; /* percentage is based on its parent */
+}
+
+.press {
+  display: flex;
+  justify-content: space-between;
+}
+
+.press img {
+  width: 24%;
+  border: 5px solid grey;
+}
+
+
+/* a block element */
+
+/* an inline element */ 
+
+/* an inline-block element */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+.container {
+  width: 900px;
+  border: 1px solid red;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+p a {
+  color: skyblue;
+}
+
+.hero img {
+  display: block;
+  width: 100%;
+}
+
+.press {
+  /* display: flex;
+  justify-content: space-between; */
+  /* overflow: hidden; */
+  /* box-sizing: border-box; */
+/* } */
+
+/* .press img { */
+  /* display: inline-block; */
+  /* float: left; */
+  /* margin-right: 1%; */
+  /* width: 25%; */
+  /* border: 1% solid gray; */
+  /* box-sizing: border-box; */
+/* } */
+
+/* */

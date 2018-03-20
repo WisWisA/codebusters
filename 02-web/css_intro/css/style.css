@@ -1,0 +1,39 @@
+
+/* search by tags */
+h1 {
+  color: red;
+}
+
+/* descendent selector */
+article h1 {
+  color: purple;
+}
+
+p {
+  background-color: mistyrose;
+}
+
+/* direct children selector - one level */
+article > p {
+  color: green;
+}
+
+/* very specific */
+article footer > p.joy {
+
+}
+
+/* op for just enough */
+.joy {
+
+}
+
+/* search by id -  id needs to be unique */
+#warning {
+  font-size: 30px;
+}
+
+/* search by class */
+/* .title {
+  color: purple;
+} */
