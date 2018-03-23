@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      border: 3px solid black;
+      background-color: mistyrose;
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  
+  <h1>potato</h1>
+
+  <div>
+    <h2>eggplant</h2>
+    <p class="special">tomato</p>
+  </div>
+
+  <script>
+    // obj.addEventListener('click', func);
+
+
+    // sayHello('blueberry');
+
+    var gentlyRemind = function(name) {
+      console.log('Dear ' + name + '. you owe me money. do the right thing or I will turn you into a smoothie');
+    }
+
+
+    // for (var index = 0; index < customers.length; index++) {
+    //   sayHello(customers[index]);
+    // }
+
+    // for (var index = 0; index < customers.length; index++) {
+    //   gentlyRemind(customers[index]);
+    // } 
+
+    // forEach(customers, sayHello);
+    // forEach(customers, gentlyRemind);
+
+    var logSomething = function() {
+      console.log('user action');
+    }
+
+    var sayHello = function(name) {
+      console.log('hello ' + name + '! Welcome to lings cars.');
+    }
+
+    var para = document.querySelector('.special')
+    para.addEventListener('click', function() {
+      
+      document.body.style.backgroundColor = 'mistyrose';
+
+      sayHello('whoever');
+
+    });
+
+    var fruits = ['banana','apple'] 
+
+    // forEach(fruits, sayHello);
+
+    var customers = ['mary', 'jo', 'lisa'];
+
+    var forEach = function(arr, func) {
+      for (var index = 0; index < arr.length; index++) {
+        func( arr[index] )
+      }
+    }   
+    var doSomething = function(name) { console.log(name) }
+
+    forEach(fruits, function(fruit) {
+
+      console.log(fruit)
+
+    });
+
+  </script>
+</body>
+</html>
