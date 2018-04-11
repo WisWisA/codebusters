@@ -1,0 +1,13 @@
+<h1>goodfoodhunting</h1>
+
+<a href="/dishes/new">post new dish</a>
+
+<% @dishes.each do |dish| %>
+  <h2>
+    <a href="/dishes?id=<%= dish['id'] %>">
+      <%= dish['name'] %>
+    </a>
+  </h2>
+  <img src="<%= dish['image_url'] %>">
+<% end %>
+
