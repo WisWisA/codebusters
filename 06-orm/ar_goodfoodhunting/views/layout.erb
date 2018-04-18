@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World</title>
+  <link href="https://fonts.googleapis.com/css?family=Tenor+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/reset.css">
+  <link rel='stylesheet' href='/stylesheets/main.css'>
+</head>
+<body>
+
+  <% if logged_in? %>
+    logged in as <%= current_user.email %>
+    <form action="/session" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <button>logout</button>
+    </form>
+  <% end %>
+
+  <nav>
+    <a href="/">home</a>
+    <a href="">all</a>
+    <a href="/about">about</a>
+    <a href="/dishes/new">post new</a>
+  </nav>
+
+  <%= yield %>
+
+  <footer>
+    <p>&copy; goodfoodhunting 2018</p>
+  </footer>
+</body>
+</html>

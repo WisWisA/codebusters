@@ -1,0 +1,68 @@
+body {
+  font-family: 'Tenor Sans', sans-serif;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 10px 0;
+  border-top: 5px solid palevioletred;
+  width: 100%;
+  z-index: 1;
+  background-color: white;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+.logo {
+  margin: 1em 0 1em 0;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.logo span {
+  color:palevioletred;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* display: grid; */
+  /* grid-template-rows: repeat(2, 1fr); */
+  /* grid-template-columns: repeat(4, 1fr); */
+  /* grid-gap: 0; */
+}
+
+.card {
+  flex-basis: 25%;
+  position: relative;
+  overflow: hidden;
+}
+
+.card h1 {
+  position: absolute;
+  bottom: -100%;
+  padding: 1em;
+  font-size: 1.5em;
+  text-align: center;
+  background-color: papayawhip;
+  transition: all .5s ease;
+}
+
+.card:hover h1 {
+  bottom: 0;
+}
+
+.cards-container img {
+  display: block;
+}
+
+footer {
+  padding: 2em;
+  background-color: palevioletred;
+  text-align: center;
+  /* background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%); */
+}

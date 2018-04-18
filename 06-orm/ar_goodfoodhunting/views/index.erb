@@ -1,0 +1,15 @@
+<h1 class="logo">
+  <a href="/">good<span>food</span>hunting</a>
+</h1>
+
+<section class="cards-container">
+  <% @dishes.each do |dish| %>
+    <div class="card">
+      <a href="/dishes/<%= dish.id %>">
+        <img src="<%= dish.image_url %>">
+      </a>
+      <h1><%= dish.name %></h1>
+    </div>
+  <% end %>
+</section>
+
