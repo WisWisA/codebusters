@@ -4,7 +4,7 @@
 
 <% @dishes.each do |dish| %>
   <h2>
-    <a href="/dishes?id=<%= dish['id'] %>">
+    <a href="/dishes/<%= dish['id'] %>">
       <%= dish['name'] %>
     </a>
   </h2>

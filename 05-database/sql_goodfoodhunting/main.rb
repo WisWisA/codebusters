@@ -11,8 +11,6 @@ def run_query(sql)
 end
 
 get '/' do
-  sql = 'SELECT * FROM dishes;'
-  @dishes = run_query(sql)
   erb :index
 end
 
@@ -29,11 +27,11 @@ post '/dishes' do
   redirect to('/')
 end
 
-
-get '/dishes' do
+get '/dishes/:id' do
   sql = "SELECT * FROM dishes WHERE id = #{params[:id]};"
   results = run_query(sql)
   @dish = results.first
+  @comments = run_query("SELECT * FROM comments WHERE dish_id = #{params[:id]};")
   erb :show
 end
 
@@ -51,7 +49,15 @@ get '/dishes/:id/edit' do
 end
 
 put '/dishes/:id' do
-  return 'updating existing dish...'
+  sql = "UPDATE dishes SET name = '#{ params[:name] }', image_url = '#{ params[:image_url] }' WHERE id = #{ params[:id] };"
+  run_query(sql)
+  redirect to("/dishes/#{params[:id]}") # redirect to single dish details page
+end
+
+post '/comments' do
+  sql = "INSERT INTO comments (content, dish_id) VALUES ('#{ params[:content] }', '#{ params[:dish_id] }');"
+  run_query(sql)
+  redirect to("/dishes/#{ params[:dish_id] }")
 end
 
 

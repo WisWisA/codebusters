@@ -10,3 +10,13 @@
   <button>delete</button>
 </form>
 <a href="/dishes/<%= @dish['id'] %>/edit">edit</a>
+
+<form action="/comments" method="post">
+  <input type="hidden" name="dish_id" value="<%= @dish['id'] %>">
+  <textarea name="content"></textarea>
+  <button>post comment</button>
+</form>
+
+<% @comments.each do |comment| %>
+  <p><%= comment['content'] %></p>
+<% end %>

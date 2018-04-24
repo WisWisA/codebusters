@@ -16,3 +16,17 @@ INSERT INTO dishes (name, image_url) VALUES ('chicken beef', 'http://www.retailh
 
 -- DELETE FROM dishes WHERE name = 'chicken beef';
 -- DELETE FROM dishes WHERE id = 2;
+
+CREATE TABLE comments (
+  id SERIAL4 PRIMARY KEY,
+  content VARCHAR(400) NOT NULL,
+  dish_id INTEGER NOT NULL,
+  FOREIGN KEY (dish_id) REFERENCES dishes (id) ON DELETE CASCADE 
+);
+
+-- DROP TABLE comments;
+
+INSERT INTO comments 
+(content, dish_id)
+values 
+('great', 8);
