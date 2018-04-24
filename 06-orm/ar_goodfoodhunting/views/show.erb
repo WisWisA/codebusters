@@ -1,23 +1,64 @@
-<h1><%= @dish['name'] %></h1>
 
-<div style="width: 50%;">
-  <img src="<%= @dish['image_url'] %>" alt="">
-</div>
+<main>
+  <section class="hero-photo">
+    <img src="<%= @dish.image_url %>" alt="">
+  </section>
 
-<form action="/dishes" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <input type="hidden" name="id" value="<%= @dish['id'] %>">
-  <button>delete</button>
-</form>
-<a href="/dishes/<%= @dish['id'] %>/edit">edit</a>
+  <section class="dish-details">
+    <header>
+      <h1><%= @dish.name %></h1>
 
-<form action="/comments" method="post">
-  <input type="hidden" name="dish_id" value="<%= @dish['id'] %>">
-  <textarea name="content"></textarea>
-  <button>post comment</button>
-</form>
+      <a href="/dishes/<%= @dish.id %>/edit">edit</a>
+      <form action="/dishes" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="id" value="<%= @dish.id %>">
+        <button>delete</button>
+      </form>
 
-<% @comments.each do |comment| %>
-  <p><%= comment.content %></p>
-  <p><%= comment.user.email if comment.user  %></p>
-<% end %>
+      <p>likes count: <%= @dish.likes.count %></p>
+
+      <form action="/likes" method="post">
+        <input type="hidden" name="dish_id" value="<%= @dish.id %>">
+        <button class="like-btn">like</button>
+      </form>
+      
+    </header>
+
+    <section class="comments">
+
+      <form action="/comments" method="post">
+        <input type="hidden" name="dish_id" value="<%= @dish['id'] %>">
+        <textarea name="content"></textarea>
+        <button>post comment</button>
+      </form>
+
+      <section class="comments-list">
+        <% @comments.each do |comment| %>
+          <p><span><%= comment.user.email if comment.user  %>:</span> <%= comment.content %></p>
+        <% end %>
+      </section>
+
+    </section>
+  
+  </section>
+</main>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script>
+  console.log('js is back!');
+
+  // var likeBtn = document.querySelector('.like-btn');
+  var $likeBtn = $('.like-btn');
+
+  $likeBtn.on('click', function(event){
+    event.preventDefault(); // js is back
+    console.log('liking!!!!');
+  });
+
+  var $comments = $('.comments-list p');
+
+  $comments.on('click', function() {
+    console.log('some comment clicked');
+  })
+  
+</script>

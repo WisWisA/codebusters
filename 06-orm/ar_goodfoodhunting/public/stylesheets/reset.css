@@ -52,5 +52,6 @@ border: 0 fixes images within links gaining a border in IE 8, 9 and 10.
 img {
     width: 100%;
     height: auto;
+    display: block;
     border: 0;
 }

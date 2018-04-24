@@ -37,5 +37,13 @@ CREATE TABLE users (
   password_digest VARCHAR(400) NOT NULL
 );
 
-alter table comments add column user_id integer;
+ALTER TABLE comments ADD COLUMN user_id INTEGER;
+
+CREATE TABLE likes (
+  id SERIAL4 PRIMARY KEY,
+  user_id INTEGER NOT NULL,
+  dish_id INTEGER NOT NULL,
+  FOREIGN KEY (dish_id) REFERENCES dishes (id) ON DELETE CASCADE,
+  FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
+);
 

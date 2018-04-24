@@ -3,4 +3,5 @@ class User < ActiveRecord::Base
   # gives you 2 methods
   # 1. password
   # 2. authenticate
+  has_many :likes
 end

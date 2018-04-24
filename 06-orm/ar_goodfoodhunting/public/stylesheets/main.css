@@ -60,9 +60,48 @@ nav a {
   display: block;
 }
 
+main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero-photo {
+  width: 40%;
+}
+
+.dish-details {
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+.dish-details h1 {
+  font-size: 1.4rem;
+  margin-bottom: .5rem;
+}
+
+.comments {
+  margin: 1em 0;
+}
+
+.comments-list {
+  margin: 1rem 0;
+}
+
+.comments-list p {
+  margin: 0.5rem 0;
+}
+
+.comments-list span {
+  color: gray;
+}
+
 footer {
   padding: 2em;
   background-color: palevioletred;
   text-align: center;
   /* background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%); */
+}
+
+form {
+  display: inline-block;
 }

@@ -7,6 +7,7 @@ require_relative 'db_config'
 require_relative 'models/dish'
 require_relative 'models/comment'
 require_relative 'models/user'
+require_relative 'models/like'
 
 enable :sessions
 
@@ -103,6 +104,17 @@ end
 delete '/session' do
   session[:user_id] = nil
   redirect to('/login')
+end
+
+post '/likes' do
+  redirect to('/login') unless logged_in? # guard
+
+  like = Like.new
+  like.user_id = current_user.id
+  like.dish_id = params[:dish_id]
+  if like.save
+    redirect to("/dishes/#{ params[:dish_id] }")
+  end
 end
 
 
