@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+  <script>
+  
+    console.log('hello js');
+
+    var notify = function() {
+      console.log('times up');
+    } 
+
+    setTimeout( notify , 10000 );
+
+    var numbers = [1,2,3,4,5,6,7,8,9];
+
+    var printNum = function(num) {
+      console.log(num);
+    }
+
+    numbers.forEach(printNum);
+
+    $.ajax({
+      url: 'http://omdbapi.com/?t=jaws&apikey=2f6435d9'
+    }).done(function(resp) {
+      console.log(resp.Title);
+    })
+
+    console.log('the end');
+  
+  
+  </script>
+</body>
+</html>
