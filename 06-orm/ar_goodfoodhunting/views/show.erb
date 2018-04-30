@@ -15,7 +15,7 @@
         <button>delete</button>
       </form>
 
-      <p>likes count: <%= @dish.likes.count %></p>
+      <p>likes count: <span class="likes-count"><%= @dish.likes.count %></span></p>
 
       <form action="/likes" method="post">
         <input type="hidden" name="dish_id" value="<%= @dish.id %>">
@@ -52,7 +52,21 @@
 
   $likeBtn.on('click', function(event){
     event.preventDefault(); // js is back
-    console.log('liking!!!!');
+
+    var options = {
+      url: '/api/likes',
+      data: { dish_id: <%= @dish.id %> },
+      method: 'post'
+    }
+
+    $.ajax(options).done(function(res) {
+      console.log(res); 
+      // use js to change the content of the elem to res.likes_count
+      $('.likes-count').text(res.likes_count)
+      // document.querySelector('.likes-count').textContent = res.likes_count
+    });    
+
+
   });
 
   var $comments = $('.comments-list p');
