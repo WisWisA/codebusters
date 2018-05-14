@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  
+  // module pattern / factory pattern
+  var createAccount = function(name) {
+
+    var balance = 0 // privacy !!!!!!!!!! 
+
+    var account = {
+      name: name,
+      getBalance: function() {
+        return balance;
+      },
+      deposit: function(a) {
+        balance = balance + a;
+      }
+    }
+
+    return account 
+  }
+
+  var account1 = createAccount('jack');
+  var account2 = createAccount('sherief');
+  account2.deposit(10)
+  
+  
+  
+  </script>
+</body>
+</html>
