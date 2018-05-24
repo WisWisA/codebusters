@@ -14,13 +14,13 @@ export default class LikeButton extends React.Component {
   handleClick(event) {
     // the this keyword is not referring to the component ??? why??? 
     // this.state.count = this.state.count + 1 dont do this!!!
-    // this.setState({
-    //   count: this.state.count + 1
-    // })
-
-    this.setState((prevState, props) => {
-      return { count: prevState + 1 }
+    this.setState({
+      count: this.state.count + 1
     })
+
+    // this.setState((prevState, props) => {
+    //   return { count: prevState + 1 }
+    // })
   }
 
   render() {

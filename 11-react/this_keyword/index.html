@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button>deposit $1</button>
+  <script>
+
+    var account = {
+      balance: 0,
+      deposit: function(amount) {
+        this.balance += amount
+
+        setTimeout(() => {
+          this.balance += 5
+        }, 5000)
+      },
+      addOneDollar: function() {
+        this.balance += 1
+      }
+    }
+
+    var btn = document.querySelector('button')
+    btn.addEventListener('click', account.addOneDollar)
+
+    // account.deposit(10)
+    // the lovely this keyword
+
+    // - every function when its running has a context - this keyword points to it
+    // - it all depends on how you call the function (call site)
+    // context - "this keyword"
+
+    // 1. default binding rule
+    function car() {
+      console.log(this)
+    }
+
+    car() // this => global object (window)
+
+    // 2. implicit binding
+    account.deposit(10) // this => account
+
+    // 3. explicit binding
+    var nicolesAccount = {
+      balance: 100000000
+    }
+
+    //                       this 
+    // account.addOneDollar.call(nicolesAccount)
+    // account.addOneDollar.apply(nicolesAccount)
+    // account.deposit.call(nicolesAccount, 10)
+
+    // 4. harddddd binding
+    var newCarFunction = car.bind(account) // bind es5
+
+    // 5. constructor function with new
+    function MakeCar() {
+      this.make = 'honda'
+    }
+
+    class Car() {
+      contructor(make) {
+        this.color = 'red'
+        this.make = make
+      }
+    }
+
+    // var poofObj = new MakeCar()
+    // var c1 = new Car('honda')
+    // c1.color
+
+    // var c2 = new Car('subaru')
+
+
+  </script>
+</body>
+</html>

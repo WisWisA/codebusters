@@ -15,10 +15,6 @@ export default class TweetBox extends React.Component {
   }
 
   handleTextChange(event) {
-    // this.setState({
-    //   content: event.target.value
-    // })
-
     event.persist();
     this.setState((prevState, props) => {
       return { content: event.target.value }
